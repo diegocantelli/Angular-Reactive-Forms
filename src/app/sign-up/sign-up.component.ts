@@ -9,6 +9,7 @@ import { FormControl, FormGroup } from '@angular/forms';
 export class SignUpComponent implements OnInit {
 
   userFormGroup: FormGroup;
+  stateOptions: string[] = ["PA", "OH", "MI"]
 
   constructor() { }
 
