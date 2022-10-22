@@ -16,7 +16,13 @@ export class SignUpComponent implements OnInit {
     this.userFormGroup = new FormGroup({
       username: new FormControl(""),
       password: new FormControl(""),
-      confirmPassword: new FormControl("")
+      confirmPassword: new FormControl(""),
+      address: new FormGroup({
+        street: new FormControl(""),
+        city: new FormControl(""),
+        state: new FormControl(""),
+        zip: new FormControl(""),
+      })
     })
   }
 
