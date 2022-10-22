@@ -20,6 +20,12 @@ export class SignUpComponent implements OnInit {
     })
   }
 
-  clear(){}
+  clear(){
+    this.userFormGroup.reset();
+  }
+
+  save(){
+    console.log(this.userFormGroup.value);
+  }
 
 }

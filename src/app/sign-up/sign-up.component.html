@@ -1,49 +1,38 @@
 <div class="row">
-    <div class="col-sm-6 offset-3">
-        <div class="text-center">
-            <h4>
-                Sign Up
-            </h4>
-
-        </div>
-        <form [formGroup]="userFormGroup">
-          <div class="form-group">
-              <label for="username">Username</label>
-              <input type="text"
-                     formControlName="username"
-                     class="form-control"
-                     id="username"
-                     placeholder="Username">
-
-          </div>
-          <div class="form-group">
-              <label for="username">Password</label>
-              <input type="text"
-                     formControlName="password"
-                     class="form-control"
-                     id="password"
-                     placeholder="Password">
-
-          </div>
-          <div class="form-group">
-              <label for="username">Confirm Password</label>
-              <input type="text"
-                     formControlName="confirmPassword"
-                     class="form-control"
-                     id="confirmPassword"
-                     placeholder="Confirm Password">
-
-          </div>
-        </form>
-        <!-- <p>{{ userName.value }}</p> -->
-        <p>
-            <button class="btn btn-success"
-                    type="submit"><i class="fas fa-save"></i> Save</button>
-            <button (click)="clear()" class="btn btn-warning">
-              <i class="fas fa-snowplow">Clear</i>
-            </button>
-        </p>
+  <div class="col-sm-6 offset-3">
+    <div class="text-center">
+      <h4>
+        Sign Up
+      </h4>
 
     </div>
+    <form [formGroup]="userFormGroup" (ngSubmit)="save()">
+      <div class="form-group">
+        <label for="username">Username</label>
+        <input type="text" formControlName="username" class="form-control" id="username" placeholder="Username">
+
+      </div>
+      <div class="form-group">
+        <label for="username">Password</label>
+        <input type="text" formControlName="password" class="form-control" id="password" placeholder="Password">
+
+      </div>
+      <div class="form-group">
+        <label for="username">Confirm Password</label>
+        <input type="text" formControlName="confirmPassword" class="form-control" id="confirmPassword"
+          placeholder="Confirm Password">
+
+      </div>
+      <p>
+        <button class="btn btn-success" type="submit"><i class="fas fa-save"></i> Save</button>
+        <button (click)="clear()" class="btn btn-warning">
+          <i class="fas fa-snowplow">Clear</i>
+        </button>
+      </p>
+    </form>
+    <!-- <p>{{ userName.value }}</p> -->
+
+
+  </div>
 
 </div>
