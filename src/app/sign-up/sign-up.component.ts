@@ -15,4 +15,8 @@ export class SignUpComponent implements OnInit {
   ngOnInit() {
   }
 
+  clear(){
+    this.userName.setValue("");
+  }
+
 }
