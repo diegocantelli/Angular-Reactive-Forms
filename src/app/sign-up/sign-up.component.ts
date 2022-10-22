@@ -9,7 +9,14 @@ import { FormControl, FormGroup } from '@angular/forms';
 export class SignUpComponent implements OnInit {
 
   userFormGroup: FormGroup;
-  stateOptions: string[] = ["PA", "OH", "MI"]
+  stateOptions: string[] = ["PA", "OH", "MI"];
+
+  userAddressInfo: any = {
+    street: 'rua teste',
+    city: 'Cidade teste',
+    state: this.stateOptions[0],
+    zip: "07055040"
+  }
 
   constructor() { }
 
@@ -33,6 +40,18 @@ export class SignUpComponent implements OnInit {
 
   save(){
     console.log(this.userFormGroup.value);
+  }
+
+  autoFillAddress(){
+    this.userFormGroup.patchValue({
+      // Essa é a propriedade que se deseja atualizar no formulário
+      address: {
+        street: this.userAddressInfo.street,
+        city: this.userAddressInfo.city,
+        state: this.userAddressInfo.state,
+        zip: this.userAddressInfo.zip
+      }
+    })
   }
 
 }
