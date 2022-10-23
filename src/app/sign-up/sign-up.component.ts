@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { CustomValidationService } from '../services/custom-validation.service';
 
 @Component({
   selector: 'app-sign-up',
@@ -18,7 +19,9 @@ export class SignUpComponent implements OnInit {
     zip: "07055040"
   }
 
-  constructor(private fb: FormBuilder) { }
+  constructor(
+    private fb: FormBuilder,
+    private customValidator: CustomValidationService) { }
 
   ngOnInit() {
     this.userFormGroup = this.fb.group({
@@ -31,6 +34,8 @@ export class SignUpComponent implements OnInit {
         state: [""],
         zip: [""],
       })
+    },{
+      validators: this.customValidator.passwordMatchValidator("password", "confirmPassword")
     })
   }
 
