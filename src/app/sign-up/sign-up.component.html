@@ -9,8 +9,16 @@
     <form [formGroup]="userFormGroup" (ngSubmit)="save()">
       <div class="form-group">
         <label for="username">Username</label>
-        <input type="text" formControlName="username" class="form-control" id="username" placeholder="Username">
-
+        <input
+          type="text"
+          formControlName="username"
+          [ngClass]="{'is-invalid': userFormGroup.get('username').errors && userFormGroup.get('username').touched }"
+          class="form-control"
+          id="username"
+          placeholder="Username">
+          <div *ngIf="userFormGroup.get('username').hasError('usernameTaken')" class="invalid-feedback">
+            <p>Nome de usuário já utilizado</p>
+          </div>
       </div>
       <div class="form-group">
         <label for="username">Password</label>
