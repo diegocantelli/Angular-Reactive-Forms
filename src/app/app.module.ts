@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { CourseListComponent } from './course-list/course-list.component';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { CourseListComponent } from './course-list/course-list.component';
   ],
   imports: [
     BrowserModule,
+    CommonModule,
     AppRoutingModule,
     ReactiveFormsModule
   ],
